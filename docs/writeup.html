@@ -1,0 +1,114 @@
+<title>Second Voice write-up</title>
+<style>
+  :root {
+    --paper: #ffffff;
+    --ink: #0f1f29;
+    --muted: #4f616d;
+    --line: #cdd7dd;
+    --accent: #0a5a78;
+    --band: #eef2f4;
+    --strong-band: #dcecf2;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #0e161b;
+      --ink: #e9f0f4;
+      --muted: #9fb1bc;
+      --line: #2b3b45;
+      --accent: #70c6e6;
+      --band: #162128;
+      --strong-band: #173039;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #0e161b;
+    --ink: #e9f0f4;
+    --muted: #9fb1bc;
+    --line: #2b3b45;
+    --accent: #70c6e6;
+    --band: #162128;
+    --strong-band: #173039;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 15px/1.5 ui-sans-serif, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px max(16px, env(safe-area-inset-right)) 48px max(16px, env(safe-area-inset-left));
+  }
+  h1 { margin: 0; font-size: 30px; line-height: 1.15; letter-spacing: -0.02em; }
+  .tagline { margin: 4px 0 0; font-size: 17px; }
+  .byline { margin: 6px 0 0; font-size: 13px; color: var(--muted); }
+  h2 { margin: 18px 0 3px; font-size: 14px; font-weight: 700; color: var(--accent); }
+  p { margin: 0 0 6px; }
+  ul, ol { margin: 0; padding-left: 18px; }
+  li { margin-bottom: 3px; }
+  .table-wrap { overflow-x: auto; margin: 6px 0 8px; }
+  table { width: 100%; min-width: 520px; border-collapse: collapse; font-size: 13.5px; font-variant-numeric: tabular-nums; }
+  th, td { padding: 4px 8px; text-align: right; border-bottom: 1px solid var(--line); }
+  th:first-child, td:first-child { text-align: left; }
+  thead th { font-weight: 600; color: var(--muted); }
+  tr.key td { background: var(--strong-band); font-weight: 600; }
+  @page { size: A4; margin: 12mm 15mm; }
+  @media print {
+    :root { --paper: #ffffff; --ink: #0f1f29; --muted: #4f616d; --line: #cdd7dd; --accent: #0a5a78; --strong-band: #dcecf2; }
+    body { font-size: 10pt; line-height: 1.38; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    main { max-width: none; padding: 0; }
+    h1 { font-size: 20pt; }
+    .tagline { font-size: 12pt; }
+    .byline { font-size: 9pt; }
+    h2 { margin-top: 9pt; font-size: 10pt; }
+    table { font-size: 9.5pt; min-width: 0; }
+  }
+</style>
+
+<main>
+  <h1>Second Voice</h1>
+  <p class="tagline">A voice in your ear when a phone call turns into a scam.</p>
+  <p class="byline">William Goodwin · Hiya Voice AI Challenge · Real-Time Assistance track</p>
+
+  <h2>What I built</h2>
+  <p>A working prototype that listens to a practice call and coaches you in your other ear. It names the pressure tactic, gives you a line to say and, once the call has raised a flag, interrupts if you start reading out a code. In scripted practice calls it also backs you up when the caller pushes. It runs in Chrome on your device, with headphones and no API keys. Practice calls and a free-listening mode both use the real speech pipeline.</p>
+
+  <h2>Who it's for, and the problem</h2>
+  <p>It's for anyone being rushed by a caller who sounds official. In 2025, 17% of UK push payment fraud cases began via telecoms, but made up 28% of losses. That fraud cost £576.4m overall (UK Finance). Hiya and Google can warn you that a call looks like a scam. As far as I could find, they don't tell you what to say next.</p>
+
+  <h2>Why voice</h2>
+  <p>The phone is at your ear, so you can't see a screen. The caller sets the pace, so there's no time to read. And it can hear you: you can ask "Coach, is this real?" hands-free, and it can stop you reading out a code. After the call a screen is better, so the summary is on screen.</p>
+
+  <h2>Decisions I'd defend</h2>
+  <ul>
+    <li><strong>Patterns and a small model classify. Nothing generates speech during a call.</strong> All 35 lines are written in advance, because a caller's speech is untrusted input. A scammer can't talk it into reassuring anyone, and recorded lines need no generating.</li>
+    <li><strong>It listens to behaviour, not voice quality.</strong> A good clone doesn't change what's being asked for, so this complements deepfake detection.</li>
+    <li><strong>Loose similarity matches can warn, but can't order.</strong> A false "hang up" is the costliest mistake, so it takes an explicit ask, a very close match, or signs adding up with at least one matched outright.</li>
+  </ul>
+
+  <h2>What I measured</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th></th><th>Scam: spoke</th><th>Scam: hang up</th><th>Genuine: spoke</th><th>Genuine: hang up</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Generated calls no rule was written from (same generator as the tuning data)</td><td>159/160</td><td>155/160</td><td>6/160</td><td>3/160</td></tr>
+        <tr class="key"><td>Real calls, the half kept unread</td><td>5/9</td><td>4/9</td><td>none in set</td><td>none in set</td></tr>
+        <tr><td>Tuning calls, synthetic voices, simulated phone line</td><td>86/90</td><td>74/90</td><td>2/90</td><td>0/90</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><strong>Real calls are the weak spot.</strong> Rules written after reading half the YouTube calls took that half from 5/11 to 10/11. The half I kept unread ended where it began (5/9 spoke, 4/9 hang up), and I've scored it three times. Those rules overfitted, and the figure to trust is about half, from a small sample. False warnings on generated genuine calls did fall, from 15/160 to 6/160. In scripted calls, urgent lines start about half a second after the chunk of speech that caused them. In unbroken speech, one took 2.3 seconds.</p>
+  <p>AI reviewers found bugs my tests had missed, including a freeze on pressing Hang up during a warning. The freeze is fixed and tested, and what's left is in the README. I shortened the coach's lines and tested them blind, but the reviewers were AI models. <strong>Not tested:</strong> real voices, real phone audio or real users. A browser can't reach call audio. As far as I know, nor can an ordinary iOS or Android app on a call it isn't carrying. A real version needs the call routed to it by a carrier, a phone maker or call forwarding, which Hiya AI Phone appears to use.</p>
+
+  <h2>What I'd do next</h2>
+  <ol>
+    <li>Test with real voices, then with the people most targeted.</li>
+    <li>Get real call data. Rules written from 11 calls didn't carry over, so more rules from so few calls won't fix this.</li>
+    <li>Try a language model only as a classifier, limited to the fixed tactics. It still wouldn't write what the coach says.</li>
+    <li>Work out how the call reaches the coach, and how only you hear it. I'd ask Hiya how AI Phone gets its audio.</li>
+  </ol>
+</main>

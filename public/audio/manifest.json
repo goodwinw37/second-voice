@@ -1,0 +1,250 @@
+{
+  "bank-code-caller": {
+    "hash": "32c3dec378fd",
+    "seconds": 8.53
+  },
+  "bank-code-you0": {
+    "hash": "31aba1775056",
+    "seconds": 2.92
+  },
+  "bank-code-you1": {
+    "hash": "bb23469c759f",
+    "seconds": 2.17
+  },
+  "bank-code-you2": {
+    "hash": "8190ba46ada0",
+    "seconds": 1.82
+  },
+  "bank-giveup-caller": {
+    "hash": "101f6ed31bf6",
+    "seconds": 3.8
+  },
+  "bank-move-caller": {
+    "hash": "659369329f61",
+    "seconds": 8.85
+  },
+  "bank-move-you0": {
+    "hash": "8d02039d56c5",
+    "seconds": 2.45
+  },
+  "bank-open-caller": {
+    "hash": "bac9d748c18c",
+    "seconds": 9.68
+  },
+  "bank-open-you0": {
+    "hash": "dbbfb1ef54dd",
+    "seconds": 2.6
+  },
+  "bank-press-caller": {
+    "hash": "be9488bec6f4",
+    "seconds": 8.9
+  },
+  "bank-press-you0": {
+    "hash": "a6a7037bcb5e",
+    "seconds": 2.58
+  },
+  "bank-secret-caller": {
+    "hash": "43e4e42b0dc0",
+    "seconds": 9.85
+  },
+  "bank-secret-you0": {
+    "hash": "72c71de0fb8d",
+    "seconds": 2.83
+  },
+  "coach-advance_fee": {
+    "hash": "7164fb53d457",
+    "seconds": 4.75
+  },
+  "coach-alarm": {
+    "hash": "b289efd070b8",
+    "seconds": 5.3
+  },
+  "coach-answer_nothing_yet": {
+    "hash": "0fec13fff253",
+    "seconds": 4.65
+  },
+  "coach-answer_one_thing": {
+    "hash": "64ef5394cba1",
+    "seconds": 4.67
+  },
+  "coach-answer_unsure": {
+    "hash": "2fe3b16e2c8a",
+    "seconds": 5.33
+  },
+  "coach-answer_what_to_say": {
+    "hash": "2c3239aaabc3",
+    "seconds": 3.95
+  },
+  "coach-answer_worried": {
+    "hash": "ccf883d6464f",
+    "seconds": 4.63
+  },
+  "coach-bank_details": {
+    "hash": "9cdb1e6ab5a4",
+    "seconds": 5.97
+  },
+  "coach-coached_lie": {
+    "hash": "eb37294f407e",
+    "seconds": 4.55
+  },
+  "coach-credentials": {
+    "hash": "e2d7f526bc29",
+    "seconds": 5.25
+  },
+  "coach-device_alarm": {
+    "hash": "9f908e7f408c",
+    "seconds": 5.53
+  },
+  "coach-device_steering": {
+    "hash": "be154f9e54b8",
+    "seconds": 4.6
+  },
+  "coach-disclosure_stop": {
+    "hash": "5fde648d69bc",
+    "seconds": 3.4
+  },
+  "coach-ended_clean": {
+    "hash": "f0f5e004d658",
+    "seconds": 6.45
+  },
+  "coach-ended_family": {
+    "hash": "5703499a3392",
+    "seconds": 13.88
+  },
+  "coach-ended_safely": {
+    "hash": "2ecd2280cd67",
+    "seconds": 14.47
+  },
+  "coach-ended_unsure": {
+    "hash": "6661d03e4ce3",
+    "seconds": 10.05
+  },
+  "coach-family_emergency": {
+    "hash": "36d2a0d3f3f4",
+    "seconds": 6.53
+  },
+  "coach-get_out": {
+    "hash": "7b73077902f8",
+    "seconds": 3.98
+  },
+  "coach-identity_number": {
+    "hash": "4c9cac668d98",
+    "seconds": 6.03
+  },
+  "coach-money_request": {
+    "hash": "0e7d29a1b95a",
+    "seconds": 4.67
+  },
+  "coach-official_props": {
+    "hash": "6842ebcd1b36",
+    "seconds": 5.33
+  },
+  "coach-personal_details": {
+    "hash": "b8f68cf1d812",
+    "seconds": 5.8
+  },
+  "coach-prize_claim": {
+    "hash": "e3f9ef1b16b6",
+    "seconds": 4.9
+  },
+  "coach-pushback": {
+    "hash": "14f27e2cf643",
+    "seconds": 3.77
+  },
+  "coach-remote_access": {
+    "hash": "3c967fbda1d8",
+    "seconds": 4.92
+  },
+  "coach-safe_account": {
+    "hash": "14ec7430afa5",
+    "seconds": 5.85
+  },
+  "coach-scam_denial": {
+    "hash": "e859d9ee366b",
+    "seconds": 3.4
+  },
+  "coach-secrecy": {
+    "hash": "4bdc168a60e2",
+    "seconds": 5.97
+  },
+  "coach-stay_on_line": {
+    "hash": "d18ffc7ce1bf",
+    "seconds": 3.3
+  },
+  "coach-threat": {
+    "hash": "9a0b82010e4d",
+    "seconds": 5.83
+  },
+  "coach-too_good": {
+    "hash": "0ff278ec6808",
+    "seconds": 5.17
+  },
+  "coach-untraceable_payment": {
+    "hash": "e803abafb41e",
+    "seconds": 4.78
+  },
+  "coach-urgency": {
+    "hash": "681e526c961e",
+    "seconds": 3.67
+  },
+  "coach-warn_generic": {
+    "hash": "6402f6ff2fc7",
+    "seconds": 5.1
+  },
+  "family-giveup-caller": {
+    "hash": "16a9e1d0b74d",
+    "seconds": 3.27
+  },
+  "family-money-caller": {
+    "hash": "09b48792118e",
+    "seconds": 10
+  },
+  "family-money-you0": {
+    "hash": "72c71de0fb8d",
+    "seconds": 2.83
+  },
+  "family-open-caller": {
+    "hash": "bb15462f1c99",
+    "seconds": 6.85
+  },
+  "family-open-you0": {
+    "hash": "27c179d6079f",
+    "seconds": 2.25
+  },
+  "family-press-caller": {
+    "hash": "3383fa916ba8",
+    "seconds": 7
+  },
+  "family-press-you0": {
+    "hash": "4b31db4eff2d",
+    "seconds": 2.92
+  },
+  "family-secret-caller": {
+    "hash": "f687e2f3bc52",
+    "seconds": 7.6
+  },
+  "family-secret-you0": {
+    "hash": "05c7dedda7b5",
+    "seconds": 1.43
+  },
+  "genuine-check-caller": {
+    "hash": "8da8fb91cb50",
+    "seconds": 4.6
+  },
+  "genuine-check-you0": {
+    "hash": "c386a2ef72a6",
+    "seconds": 2
+  },
+  "genuine-close-caller": {
+    "hash": "394c3c7380ed",
+    "seconds": 9.43
+  },
+  "genuine-open-caller": {
+    "hash": "1999723dabe6",
+    "seconds": 12
+  },
+  "genuine-open-you0": {
+    "hash": "116dcee24e20",
+    "seconds": 1.98
+  }
+}
