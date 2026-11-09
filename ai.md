@@ -14,9 +14,12 @@
 
 Two things to disclose about the YouTube calls. An auditor printed the channel names across all 20 rows, including the unread half. That was a small slip: metadata only, with no dialogue. And the unread half was scored three times, on three versions of the code, not once (item 14). An audit also re-ran it on unchanged code to confirm the figures, and got the same result.
 
-**My part:** I chose the idea from Claude's three options. I took the one it recommended, which it flagged as overlapping with what Hiya and Google already ship. I also decided on no native iOS app and no paid or real phone line for this submission, and on GitHub rather than a zip. And I asked to test whether shorter coach lines could stay good, rather than simply cutting them.
+**How the work was split:**
 
-<!-- WILLIAM: replace this comment before submitting. Say what you actually did: which code you read and changed, what you tested with your own voice, and which decisions you changed or pushed back on. -->
+1. **Research and ideas (Claude).** It researched what Hiya and Google already ship, and which speech models could run in a browser, then brainstormed three ideas with their trade-offs.
+2. **The choice (me).** I picked the live scam-call coach. It was the option Claude recommended, and it flagged that it overlaps with what Hiya and Google already ship.
+3. **Code and tests (Claude).** It wrote the code, the unit tests, the browser tests and the evaluation scripts.
+4. **Testing to steer each round (both of us).** Claude ran the full test suite, the browser tests and the evaluations after each change, and independent AI reviewers tried to break the product. I also ran the full tests on the product myself, to check everything worked correctly. I used the results to decide what came next: no native iOS app and no paid or real phone line for this submission, testing whether shorter coach lines could stay good rather than simply cutting them, and GitHub rather than a zip.
 
 ## AI inside the product
 
